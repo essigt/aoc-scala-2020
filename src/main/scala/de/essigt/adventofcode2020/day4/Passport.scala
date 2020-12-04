@@ -91,8 +91,8 @@ class Passport(fields: Map[String, String]) {
         false
       } else {
         hgtOptional.get match {
-          case s"${cm}cm" => (cm.toInt >= 150 && cm.toInt <= 193)
-          case s"${in}in" => (in.toInt >= 59 && in.toInt <= 76)
+          case s"${cm}cm" => (150 to 193 contains cm.toInt)
+          case s"${in}in" => ( 59 to  76 contains in.toInt)
           case _ => false
         }
       }
