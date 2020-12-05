@@ -31,11 +31,9 @@ object Day3 {
 
     val file = Source.fromFile(filename)
     val list = file.getLines
-      .map(s => {
-        s.split("", -1)
-          .toList
-          .filterNot(s => s.isEmpty)
-      })
+      .map(_.split("", -1)
+            .toList
+            .filterNot(s => s.isEmpty))
       .toList
     file.close
     list
